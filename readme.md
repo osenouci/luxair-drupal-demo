@@ -56,7 +56,7 @@ The theme can be installed using the appearance tag.
 
 ![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-36-06.png "Title")
 
-7. Refresh the advert page from `step 6` and it will render the angular application correctly.
+8. Refresh the advert page from `step 6` and it will render the angular application correctly.
 
 ![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-36-39.png "Title")
 
