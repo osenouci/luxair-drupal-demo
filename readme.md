@@ -1,20 +1,64 @@
 # Summary
 The aim of this project to explain the complexity that a Drupal developer faces at Luxair. 
 
-The project contains two disconnected applications. The first is a `Drupal application` that runs inside a Docker container.While the second application is a `Signle page application` powered by Angular.
+The project contains two disconnected applications. The first is a `Drupal application` that runs inside a Docker container. While the second application is a `Signle page application` powered by Angular.
 
-A recurring developement task consists of:
-
-1. Importing a SPA application so that is displayed inside a Drupal page.
+The two will be used to demo a recurring developement task that consists of:
+1. Importing a SPA application so that it is displayed inside a Drupal page.
 2. Using the Drupal backend to customize the SPA application.
 
+> **Our goal**
+>
+> Our aim is to estimate the required effert to support Drupal as a developer.
+> The solution of the problem is provided as a separate branch titled `solution-branch`.
+>
+> Please consider the problem and see if know how to solve it without necessarly coding it. If the solution is not clear than look at the solution branch.
 
 
-The aim of this task is to check if you are able to carry out the task. Here are the steps required to import the SPA and use Drupal to configure it:
-1. Create a custome module in order to import the SPA's assests.
-1. Use the custome module to create an `entity` that the content manager will use to create a page containing the SPA and configure it.
-1. Create a theme that will modify the `entity`'s view and inject `<app-root></app-root>` into it.
+## Work flow to be considered
+___
+We will create an **advert** module that will be used to create a base `content-type`. The **advert** `content-type` will be used by content managers to create customizable pages where they can customize the attributes of the single page application. Currently we pass a single value called `range`. This value is the equivalent of the `skip` in pagination terms.
 
+The work flow of a content manager that wants to install and use the `advert` content is as follows:
+
+1. When we visit the content types section located under the `structure` tab, we should have a list of default **content types**.
+
+![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-21-54.png "Title")
+
+2. In ordert to add our new adverting content type, we install the Advert module that we have created. The advert module does the following:
+
+    1. Imports our `Single Page Application` as a library.
+    1. Attaches the `Single Page Application` assets to the page source.
+    1. Creates an `Advert` content type.
+
+![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-22-40.png "Title")
+
+3. Once we install the advert module, a new `Advert` content type should appear under the `structure` tab.
+
+![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-23-11.png "Title")
+
+4. We create a test page of type `advert` by going to Content and then clickig on the `+Add content` button.
+
+![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-34-53.png "Title")
+
+![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-35-04.png "Title")
+
+5. We fill down the form with test data like shown here below and finally preview the changes and save them.
+
+![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-35-21.png "Title")
+
+6. Drupal will render our new page. It will not contain our Angular app as the html does not contain the `<app-root>` tag
+
+![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-35-39.png "Title")
+
+7. We need to overwrite the view of the `advert` page in order to render the JavaScript application and also pass it the value of the `product range` field. I have created a new theme called `Advert theme` to do this. 
+The theme can be installed using the appearance tag.
+
+![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-36-06.png "Title")
+
+7. Refresh the advert page from `step 6` and it will render the angular application correctly.
+
+![alt text](./screenshots/Screenshot%20from%202023-06-02%2016-36-39.png "Title")
 
 ## Running the Drupal application
 ___
@@ -54,6 +98,19 @@ http://localhost:8080
 ```
 http://localhost:8080/login
 ```
+
+
+## Notes on CROS requests
+____
+
+The single page application makes cross domain requests which are blocked by our CORS policies. For demo purposes disable chrome's security. 
+
+To disable the chrome security on Linux, use the following command:
+
+```
+/usr/bin/google-chrome --disable-web-security --ignore-certificate-errors  --disable-gpu --user-data-dir=/tmp/chrome
+```
+
 
 ## Useful Drush commands 
 ____
