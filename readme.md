@@ -1,5 +1,5 @@
 # Summary
-The aim of this project to explain the complexity that a Drupal developer faces at Luxair. 
+The aim of this project to explain the complexity that a Drupal developer faces at work. 
 
 The project contains two disconnected applications. The first is a `Drupal application` that runs inside a Docker container. While the second application is a `Signle page application` powered by Angular.
 
