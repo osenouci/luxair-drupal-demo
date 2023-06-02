@@ -1,0 +1,6 @@
+name: Advert
+type: module
+description: 'Advert example done in Drupal 8'
+package: Luxair Example
+version: 1.0
+core: '8.x'
