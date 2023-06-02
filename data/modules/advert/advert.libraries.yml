@@ -1,0 +1,10 @@
+spa:
+  css:
+    base:
+      dist/styles.bccc95ecb751889a.css: { minified: true }
+  js:
+    dist/runtime.ad2b38ea40eb9690.js: { minified: true }
+    dist/polyfills.a2abcaaadd56aab6.js: { minified: true }
+    dist/main.91a551098542004c.js: { minified: true }
+  dependencies:
+    - core/drupalSettings
