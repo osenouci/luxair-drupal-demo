@@ -1,0 +1,8 @@
+name: Advert
+type: theme
+description: A Drupal 8 theme
+core: 8.x
+regions:
+  content: 'Main content'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
