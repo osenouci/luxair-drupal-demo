@@ -1,0 +1,9 @@
+<?php
+
+function advert_page_attachments(array &$page)
+{
+  /**
+   * Attach the the angular SPA as a library
+   */
+    $page['#attached']['library'][] = 'advert/spa';
+}
