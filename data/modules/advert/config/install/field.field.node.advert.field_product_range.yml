@@ -1,0 +1,25 @@
+uuid: 4c0e3fbe-bfae-4a97-b477-934f920487db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_range
+    - node.type.advert
+id: node.advert.field_product_range
+field_name: field_product_range
+entity_type: node
+bundle: advert
+label: 'product range'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 5
+default_value_callback: ''
+settings:
+  min: 1
+  max: 200
+  prefix: ''
+  suffix: ''
+field_type: integer

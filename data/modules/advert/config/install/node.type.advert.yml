@@ -1,0 +1,17 @@
+uuid: 564349a4-03d8-4608-b54d-2461698d0020
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: advert
+type: advert
+description: 'Test advert'
+help: ''
+new_revision: true
+preview_mode: 2
+display_submitted: true

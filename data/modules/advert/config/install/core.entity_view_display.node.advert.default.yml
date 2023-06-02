@@ -1,0 +1,29 @@
+uuid: adf02e41-dc76-4454-ae15-3c0d3d4f972d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.advert.field_product_range
+    - node.type.advert
+  module:
+    - user
+id: node.advert.default
+targetEntityType: node
+bundle: advert
+mode: default
+content:
+  field_product_range:
+    type: number_integer
+    weight: 1
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
