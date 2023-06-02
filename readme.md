@@ -10,7 +10,7 @@ The two will be used to demo a recurring developement task that consists of:
 > **Our goal**
 >
 > Our aim is to estimate the required effert to support Drupal as a developer.
-> The solution of the problem is provided as a separate branch titled `solution-branch`.
+> The solution of the problem is provided as a separate branch titled `solution`.
 >
 > Please consider the problem and see if know how to solve it without necessarly coding it. If the solution is not clear than look at the solution branch.
 
